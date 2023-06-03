@@ -32,7 +32,7 @@ model_lr_score = model_lr.score(X_train, y_train)
 model_rfc_score = model_rfc.score(X_train, y_train)
 
 # Create a function that accepts an ML mode object say 'model' and the four features of an Iris flower as inputs and returns its name.
-@st.cache_data
+@st.cache()
 def prediction(_model, sl, sw, pl, pw):
   pred = _model.predict(np.array([sl, sw, pl, pw]).reshape(1,-1))
   if pred[0] == 0:
